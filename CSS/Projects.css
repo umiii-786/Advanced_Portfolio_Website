@@ -1,0 +1,144 @@
+#Projects_section {
+    background: linear-gradient(#20242d, #6facac, #94dbdb);
+    width: 100%;
+  
+    min-height: 90vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    width: 80%;
+    height: auto;
+    min-height: 550px;
+    margin:50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #323846;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px 0px white;
+}
+
+.Projects {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px 0px;
+
+
+}
+
+
+
+.heading {
+    margin-top: 40px;
+    font-size: 35px;
+    font-family: sans-serif;
+    color: #ffffffde;
+    text-align: center;
+
+
+}
+.eachproject{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+
+}
+
+.eachproject_pic {
+    width: 250px;
+    height: 250px;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 5px 5px white;
+    transition: all ease-in-out 0.5s;
+    margin: 0px 20px;
+  
+}
+
+
+.eachproject_pic:hover{
+    opacity: 0.5;
+}
+
+.content {
+    /* height: 0px; */
+    padding: 10px 10px;
+    position: relative;
+    transition: all ease-in-out 1s;
+    background-color: #20242d;
+    text-align: center;
+    width:200px;
+    min-height: 200px;
+   
+    
+    
+}
+
+
+#project1 {
+    background-image: url(../Images/project1.jpg);
+}
+
+#project2 {
+    background-image: url(../Images/Untitled\ design.png);
+}
+
+#project3 {
+    background-image: url(../Images/project3.jpg);
+}
+
+.proj_name {
+    font-size: 18px;
+    font-family: sans-serif;
+    color: cyan;
+}
+
+.para {
+    font-size: 16px;
+    color: white;
+}
+@media screen and (max-width:1090px) {
+    .Projects{
+        flex-direction: column;
+    }
+    .eachproject{
+       flex-direction: row;
+       width: 90%;
+    }
+    .eachproject:nth-child(odd){
+        flex-direction: row-reverse;
+    }
+    .content{
+        height: 250px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width:600px) {
+    .eachproject{
+        flex-direction: column !important;
+        
+    }
+    .eachproject:nth-child(even){
+        margin: 70px 0px;
+    }
+    .eachproject_pic{
+        width: 90%;
+    }
+    .content{
+        width: 70%;
+        min-height: 300px;
+    }
+}

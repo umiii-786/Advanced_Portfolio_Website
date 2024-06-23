@@ -1,0 +1,25 @@
+
+@media screen and (max-width:950px){
+.links{
+
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    top: -200px;
+    width: 200px;
+    height: 200px;
+    background-color:  #323846;
+    border-radius: 8px;
+    z-index: 1;
+}
+.links a{
+    margin-left: 5px;
+    color:#d1d4df;
+}
+
+.hamburgur{
+    display: block;
+}
+
+}

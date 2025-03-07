@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,492 +7,13 @@
     <link rel="stylesheet" href="./CSS/Navbar.css">
     <link rel="stylesheet" href="./CSS/Index.css">
     <link rel="stylesheet" href="./CSS/ResponsiveNavbar.css">
+    <link rel="stylesheet" href="./CSS/Projects.css">
+    <link rel="stylesheet" href="./CSS/Services.css">
+    <link rel="stylesheet" href="./CSS/Certificate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        .certificate_section {
-            background-color: #0e0e1a;
-            padding: 50px 0px;
-        }
 
-        .certificate_Heading {
-            width: 80%;
-            margin:30px auto !important;
-            color: white;
-
-        }
-
-        .certification {
-            height: 600px;
-            margin: 0;
-            display: grid;
-            grid-template-rows: 500px 100px;
-            grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
-            align-items: center;
-            justify-items: center;
-
-        }
-
-        main#carousel {
-            grid-row: 1 / 2;
-            grid-column: 1 / 8;
-            width: 100%;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            transform-style: preserve-3d;
-            perspective: 600px;
-            --items: 5;
-            --middle: 3;
-            --position: 1;
-            pointer-events: none;
-        }
-
-        div.item {
-            position: absolute;
-            width: 600px;
-            height: 400px;
-            --r: calc(var(--position) - var(--offset));
-            --abs: max(calc(var(--r) * -1), var(--r));
-            transition: all 0.25s linear;
-            transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
-            z-index: calc((var(--position) - var(--abs)));
-        }
-
-        div.item:nth-of-type(1) {
-            --offset: 1;
-            /* background-color: #90f1ef; */
-        }
-
-        div.item:nth-of-type(2) {
-            --offset: 2;
-            /* background-color: #ff70a6; */
-        }
-
-        div.item:nth-of-type(3) {
-            --offset: 3;
-            /* background-color: #ff9770; */
-        }
-
-        div.item:nth-of-type(4) {
-            --offset: 4;
-            /* background-color: #ffd670; */
-        }
-
-        div.item:nth-of-type(5) {
-            --offset: 5;
-            /* background-color: #e9ff70; */
-        }
-
-        input:nth-of-type(1) {
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
-        }
-
-        input:nth-of-type(1):checked~main#carousel {
-            --position: 1;
-        }
-
-        input:nth-of-type(2) {
-            grid-column: 3 / 4;
-            grid-row: 2 / 3;
-        }
-
-        input:nth-of-type(2):checked~main#carousel {
-            --position: 2;
-        }
-
-        input:nth-of-type(3) {
-            grid-column: 4 /5;
-            grid-row: 2 / 3;
-        }
-
-        input:nth-of-type(3):checked~main#carousel {
-            --position: 3;
-        }
-
-        input:nth-of-type(4) {
-            grid-column: 5 / 6;
-            grid-row: 2 / 3;
-        }
-
-        input:nth-of-type(4):checked~main#carousel {
-            --position: 4;
-        }
-
-        input:nth-of-type(5) {
-            grid-column: 6 / 7;
-            grid-row: 2 / 3;
-        }
-
-        input:nth-of-type(5):checked~main#carousel {
-            --position: 5;
-        }
-
-        .item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
-
-    <style>
-        .project_section {
-            width: 100%;
-            background-color: #0e0e1a;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            /* padding: 30px 0px; */
-            /* align-items: center;
-    justify-content: center; */
-
-        }
-
-        .project_section h1 {
-            /* margin: 0px !important; */
-            margin: 30px auto;
-            text-align: center;
-            color: white;
-        }
-
-        .projects {
-            display: flex;
-            flex-direction: column;
-            row-gap: 50px;
-            width: 100%;
-            /* margin: auto; */
-            place-self: start;
-        }
-
-        .project-btn {
-            display: flex;
-            gap: 1rem;
-            margin: 20px 0px;
-            overflow: hidden;
-        }
-
-        .project-btn a {
-            /* flex: 1; */
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: .5rem;
-            border-radius: .5rem;
-            width: 200px;
-            font-weight: 700;
-            color: white;
-            font-family: monospace;
-        }
-
-       
-
-        .github {
-            background: #2867ea;
-            box-shadow: 0px 0px 10px 2px #282844;
-        }
-
-        .site {
-            background: linear-gradient(90deg, #d176c5 0%, purple 100%);
-        }
-
-
-        @media (min-width: 768px) {
-            .projects {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                column-gap: 16px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .projects {
-                column-gap: 48px;
-                row-gap: 100px;
-                /* margin: 0 48px; */
-            }
-        }
-
-        @media (min-width: 1440px) {
-            .projects {
-                column-gap: 200px;
-                /* margin: 0 100px; */
-            }
-        }
-
-        .project {
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            margin: 0px 30px;
-            width: 90%;
-            transition: transform 0.35s cubic-bezier(0.56, 0.42, 0.28, 0.95), opacity 0.15s ease;
-        }
-
-        @media (min-width: 768px) {
-            .project:nth-child(2) {
-                margin-top: 20%;
-            }
-
-            .project:nth-child(3) {
-                margin-top: -20%;
-            }
-        }
-
-        .project__image {
-            display: flex;
-            align-items: flex-start;
-            margin: 0 0 16px;
-            overflow: hidden;
-            border-radius: 20px;
-            transition: border-radius 0.5s cubic-bezier(0.56, 0.42, 0.28, 0.95);
-            height: 300px;
-            box-shadow: 0px 0px 10px 3px #6689e2;
-        }
-
-        .project__image img {
-            aspect-ratio: 1;
-            width: 100%;
-            height: auto;
-            border-radius: inherit;
-            object-fit: cover;
-            /* opacity: 0; */
-            transition: transform 0.8s cubic-bezier(0.56, 0.42, 0.28, 0.95);
-        }
-
-        .project__title,
-        .project__description {
-            width: fit-content;
-            overflow: hidden;
-        }
-
-        .project__title p {
-            color: #fff;
-            font-size: 28px;
-            font-weight: 500;
-            margin: 0 0 8px;
-            transition: transform 0.3s cubic-bezier(0.56, 0.42, 0.28, 0.95) 0.2s;
-        }
-
-        .project__description p {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.5);
-            margin: 0;
-            transition: transform 0.4s cubic-bezier(0.56, 0.42, 0.28, 0.95);
-        }
-
-        .project.project--hovered .project__title p,
-        .project.project--hovered .project__description p,
-        .project.project--hovered .project-btn a {
-            /* transform: translateY(150%); */
-        }
-
-        .projects.projects--hovered .project:not(.project--hovered) {
-            transform: scale(0.87);
-            opacity: 0.4;
-        }
-
-        .project.project--hovered .project__image {
-            /* height: 400px; */
-            /* position: absolute; */
-            max-width: 1000px;
-            z-index: 10;
-            /* margin-right: 50px; */
-        }
-
-
-        .project.project--hovered .project__image img {
-            /* width: 1000px; */
-            /* transform: scale(1.12); */
-        }
-
-        .right:hover {}
-    </style>
-
-    <style>
-        .Skills_section {
-            width: 100%;
-            background-color: #0e0e1a;
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            /* justify-content: center; */
-            align-items: center;
-            padding-bottom: 40px;
-        }
-
-        .Skills_section h1 {
-            color: white;
-    margin: 30px auto;
-    width: 80%;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            width: 400px;
-            min-height: 400px;
-            gap: 20px;
-            position: relative;
-            justify-content: center;
-            align-items: center;
-            transition: 1s;
-        }
-
-        .each {
-            /* background: #f1f3f6;
-            box-shadow: inset 0 0 5px rgba(55, 84, 170, 0),
-                inset 0 0 10px rgba(255, 255, 255, 0), 5px 5px 9px rgba(55, 84, 170, 0.15),
-                -5px -5px 11px white, inset 0px 0px 2px rgba(255, 255, 255, 0.2);
-            transition: box-shadow 0.2s ease-in-out;
-            height: 190px;
-            width: 190px;
-            border-radius: 30px;
-            font-family: Arial, Helvetica, sans-serif;
-            border: 5px solid #eaeef5; */
-
-            background: #01000e;
-            box-shadow: inset 0 0 5px rgba(55, 84, 170, 0), inset 0 0 10px rgb(1 0 14), 5px 5px 9px rgb(1 0 14), -5px -5px 11px #01000e, inset 0px 0px 2px rgb(1 0 14);
-            transition: box-shadow 0.2s ease-in-out;
-            height: 210px;
-            width: 240px;
-            border-radius: 30px;
-            font-family: Arial, Helvetica, sans-serif;
-            border: 5px solid #000005;
-            color: #ffffffc9;
-        }
-
-        .skills:hover .each {
-            box-shadow: inset 4px 4px 7px rgba(55, 84, 170, 0.15),
-                inset -4px -4px 10px white, 0px 0px 2px rgba(255, 255, 255, 0.2);
-            transition: box-shadow 0.2s ease-in-out;
-        }
-
-        .each .box {
-            padding: 16px;
-        }
-
-        .css .box {
-            text-align: right;
-        }
-
-        .js .box {
-            margin-top: 40px;
-        }
-
-        .ng .box {
-            margin-top: 40px;
-            text-align: right;
-        }
-
-        .each .box .content h2 {
-            font-size: 20px;
-            margin-top: 0;
-            margin-bottom: 6px;
-        }
-
-        .each .box .content p {
-            font-size: 12px;
-            margin: 0;
-        }
-
-        .html .box .content i {
-            margin-top: 40px;
-        }
-
-        .css .box .content i {
-            font-size: 30px;
-            /* margin-left: 100px; */
-            display: inline-block;
-            margin-top: 40px;
-            margin-left: 5px;
-        }
-
-        .js .box .content i {
-            margin-bottom: 20px;
-        }
-
-        .ng .box .content i {
-            margin-bottom: 20px;
-        }
-
-        .each .box .content i {
-            font-size: 30px;
-        }
-
-        .center {
-            position: absolute;
-            height: 160px;
-            width: 160px;
-            background: #ffffffc9;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            border-radius: 108px;
-            box-shadow: inset 0 0 5px rgba(55, 84, 170, 0),
-                inset 0 0 10px rgba(255, 255, 255, 0), 5px 5px 9px rgba(55, 84, 170, 0.15),
-                -5px -5px 11px #ffffffc9, inset 0px 0px 2px rgba(255, 255, 255, 0.2);
-            transition: box-shadow 0.2s ease-in-out;
-            border: 10px solid #c9c9cc;
-        }
-
-        .center .box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .fa-solid {
-            -webkit-font-smoothing: antialiased;
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            line-height: 1;
-            text-rendering: auto;
-        }
-    </style>
-
-<!-- responsive CSS  -->
-<style>
-   @media only screen and (max-width: 650px) {
-  .skills {
-   display: flex;
-   flex-direction: column;
-   width: 90%;
-  }
-  .center{
-    display: none;
-  }
-  .each{
-    width: 80%;
-    margin: 10px 0px;
-  }
-  .project{
-    margin: 50px auto;
-  }
-  div.item{
-    width: 90%;
-  }
-  /* .each:nth-child(odd){ */
-    /* align-self: flex-start;
-  }
-
-  .each:nth-child(even){
-    align-self: flex-end;
-
-  }
-  .each:nth-child(4){
-    align-self: flex-start;
-  } */
-}
-</style>
 </head>
 
 <body>
@@ -528,11 +48,9 @@
                     Hello, It's me
                 </h2>
                 <h1 class="heading">Muhammad Umair</h1>
-                <h2 class="subheading" style="--i:8;">And I am a <b class="Half_heading_part">Frontend Developer</b>
+                <h2 class="subheading" style="--i:8;">I am a <b class="Half_heading_part">Learning Enthusiast</b>
                 </h2>
-                <p class="para">Hello! I'm Muhammad Umair, a passionate and creative frontend developer with a keen eye
-                    for design and a love for crafting engaging, user-friendly web experiences. With a solid foundation
-                    in HTML, CSS, and JavaScript, </p>
+                <p class="para">Hi, I'm Umair, a passionate Web Developer and AI Enthusiast with a strong foundation in machine learning and software engineering. With a deep interest in crafting user-friendly web applications and Crafting an AI Features.</p>
                 <div class="social_media_links">
 
                     <a class="linkedin" href="https://www.linkedin.com/in/muhammad-umair-649a43297/"><img
@@ -554,22 +72,36 @@
             </div>
         </div>
     </main>
-
+   
     <section id="AboutUS_Section">
+       
         <div class="container">
             <div class="right">
                 <!-- <img src="./Images/pentagonalcyan-removebg-preview.png" > -->
                 <img src="./Images/fr.jpg" alt="" class="shape">
                 <img src="./Images/itself1.png" id="itself">
             </div>
+            
             <div class="left">
-                <h1 class="heading">About <strong class="Half_heading_part">Me!</strong></h1>
-                <h3 class="subheading">Frontend Developer</h3>
-                <p class="para">My journey into web development began two (2) years ago when I created my first website
-                    and fell in love with the process of turning ideas into reality on the web. Since then, I have
-                    worked on a range of projects, from small personal websites to large-scale applications, each
-                    presenting unique challenges and learning opportunities.</p>
-                <button class="btn">Read More....!</button>
+                <h1 class="heading" id="aboutHeading">About <strong class="Half_heading_part">Me!</strong></h1>
+                <h3 class="subheading">Hello, I'm Umair! 👋</h3>
+                <p class="para">
+                    I am a final-year Software Engineering student, consistently securing the top position in my class. As a Web Developer, AI Enthusiast, and Software Engineer, I am passionate about building intelligent, scalable, and user-friendly applications.
+
+                    With expertise in full-stack development, machine learning, and data-driven solutions, my journey is driven by critical thinking, problem-solving, and a relentless passion for innovation.
+   
+                    <div class="AboutList_option">
+
+                  
+                    <strong class="Half_heading_part aboutlist_head" style="display: block;">What I Do:</strong>
+                    <ol class="Aboutlist">
+                       <li>🚀 Turning ideas into reality through code</li>
+                       <li>💡 Blending AI with web development for smarter applications</li>
+                       <li>📊 Analyzing data, solving problems, and optimizing performance</li>
+                    </ol>
+                </div>
+                    </p>
+                <button class="btn" onclick="Readmore(this)">Read More....!</button>
             </div>
         </div>
     </section>
@@ -666,7 +198,7 @@
     </section>
     <hr>
     <section class="project_section" id="projects">
-        <h1 class="heading">My <strong class="Half_heading_part">Certifications!</strong></h1>
+        <h1 class="heading">My <strong class="Half_heading_part">Projects!</strong></h1>
         <div class="projects">
 
             <div class="project">
@@ -830,6 +362,9 @@
     </section>
 
 </body>
+<script>
+  
+</script>
 <script src="./Navbar.js"></script>
 <script src="./projectEffect.js"></script>
 

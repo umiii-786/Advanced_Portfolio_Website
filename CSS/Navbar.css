@@ -5,7 +5,7 @@
 
 header {
     width: 100%;
-    background-color: #20242d;
+    background-color: #01000e;
     display: flex;
     justify-content: center;
    
@@ -35,25 +35,38 @@ header {
     font-weight: bold;
     font-family: sans-serif;
     margin:0px 20px;
+    transition: .5s;
+    cursor: pointer;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
 }
 
 .links a:hover{
-    color: cyan;
+    color: #f66fe4;
+    text-shadow: 0px 10px 10px white;
 }
 
 .Half_heading_part{
-    color: cyan;
+    color: #f66fe4;
 }
 .btn {
     padding: 8px 5px;
     color: black;
     font-weight: bold;
-    background-color: cyan;
+    background-color: #f66fe4;
     width: 120px;
     border-radius: 20px;
-    border: 1px solid cyan;
-    box-shadow: 0px 0px 12px 2px cyan;
+    border: 1px solid #f66fe4;
+    box-shadow: 0px 0px 12px 2px #f66fe4;
     margin:20px 0px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition:0.5s ;
+}
+.btn:hover{
+  opacity: 0.7;
+  
 }
 .hamburgur{
     display: none;
@@ -64,3 +77,76 @@ header {
     background-color: white;
     margin-top: 5px;
 }
+
+@keyframes slideBottom{
+    from{
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    
+    to{
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideTop{
+    from{
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    
+    to{
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideRight{
+    from{
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    
+    to{
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideLeft{
+    from{
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    
+    to{
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  
+ 
+
+
+/* .navbar a{
+    display: inline-block;
+    margin-left: 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    opacity: 0;
+    transition: .5s;
+    cursor: pointer;
+    
+    animation: slideBottom 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+  } */
+/*   
+  .navbar a:hover,
+  .navbar .active{
+    color: #6bdcff;
+  }
+  
+  .navbar a:hover{
+    text-shadow: 0 0 40px #9ee8ff;
+  } */

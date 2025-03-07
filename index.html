@@ -5,12 +5,495 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <link rel="stylesheet" href="./CSS/Navbar.css">
-     <link rel="stylesheet" href="./CSS/Index.css">
-     <link rel="stylesheet" href="./CSS/ResponsiveNavbar.css">
-     <style>
-      
-     </style>
+    <link rel="stylesheet" href="./CSS/Navbar.css">
+    <link rel="stylesheet" href="./CSS/Index.css">
+    <link rel="stylesheet" href="./CSS/ResponsiveNavbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .certificate_section {
+            background-color: #0e0e1a;
+            padding: 50px 0px;
+        }
+
+        .certificate_Heading {
+            width: 80%;
+            margin:30px auto !important;
+            color: white;
+
+        }
+
+        .certification {
+            height: 600px;
+            margin: 0;
+            display: grid;
+            grid-template-rows: 500px 100px;
+            grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+            align-items: center;
+            justify-items: center;
+
+        }
+
+        main#carousel {
+            grid-row: 1 / 2;
+            grid-column: 1 / 8;
+            width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            perspective: 600px;
+            --items: 5;
+            --middle: 3;
+            --position: 1;
+            pointer-events: none;
+        }
+
+        div.item {
+            position: absolute;
+            width: 600px;
+            height: 400px;
+            --r: calc(var(--position) - var(--offset));
+            --abs: max(calc(var(--r) * -1), var(--r));
+            transition: all 0.25s linear;
+            transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
+            z-index: calc((var(--position) - var(--abs)));
+        }
+
+        div.item:nth-of-type(1) {
+            --offset: 1;
+            /* background-color: #90f1ef; */
+        }
+
+        div.item:nth-of-type(2) {
+            --offset: 2;
+            /* background-color: #ff70a6; */
+        }
+
+        div.item:nth-of-type(3) {
+            --offset: 3;
+            /* background-color: #ff9770; */
+        }
+
+        div.item:nth-of-type(4) {
+            --offset: 4;
+            /* background-color: #ffd670; */
+        }
+
+        div.item:nth-of-type(5) {
+            --offset: 5;
+            /* background-color: #e9ff70; */
+        }
+
+        input:nth-of-type(1) {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+
+        input:nth-of-type(1):checked~main#carousel {
+            --position: 1;
+        }
+
+        input:nth-of-type(2) {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+
+        input:nth-of-type(2):checked~main#carousel {
+            --position: 2;
+        }
+
+        input:nth-of-type(3) {
+            grid-column: 4 /5;
+            grid-row: 2 / 3;
+        }
+
+        input:nth-of-type(3):checked~main#carousel {
+            --position: 3;
+        }
+
+        input:nth-of-type(4) {
+            grid-column: 5 / 6;
+            grid-row: 2 / 3;
+        }
+
+        input:nth-of-type(4):checked~main#carousel {
+            --position: 4;
+        }
+
+        input:nth-of-type(5) {
+            grid-column: 6 / 7;
+            grid-row: 2 / 3;
+        }
+
+        input:nth-of-type(5):checked~main#carousel {
+            --position: 5;
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+
+    <style>
+        .project_section {
+            width: 100%;
+            background-color: #0e0e1a;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* padding: 30px 0px; */
+            /* align-items: center;
+    justify-content: center; */
+
+        }
+
+        .project_section h1 {
+            /* margin: 0px !important; */
+            margin: 30px auto;
+            text-align: center;
+            color: white;
+        }
+
+        .projects {
+            display: flex;
+            flex-direction: column;
+            row-gap: 50px;
+            width: 100%;
+            /* margin: auto; */
+            place-self: start;
+        }
+
+        .project-btn {
+            display: flex;
+            gap: 1rem;
+            margin: 20px 0px;
+            overflow: hidden;
+        }
+
+        .project-btn a {
+            /* flex: 1; */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .5rem;
+            border-radius: .5rem;
+            width: 200px;
+            font-weight: 700;
+            color: white;
+            font-family: monospace;
+        }
+
+       
+
+        .github {
+            background: #2867ea;
+            box-shadow: 0px 0px 10px 2px #282844;
+        }
+
+        .site {
+            background: linear-gradient(90deg, #d176c5 0%, purple 100%);
+        }
+
+
+        @media (min-width: 768px) {
+            .projects {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 16px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .projects {
+                column-gap: 48px;
+                row-gap: 100px;
+                /* margin: 0 48px; */
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .projects {
+                column-gap: 200px;
+                /* margin: 0 100px; */
+            }
+        }
+
+        .project {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            margin: 0px 30px;
+            width: 90%;
+            transition: transform 0.35s cubic-bezier(0.56, 0.42, 0.28, 0.95), opacity 0.15s ease;
+        }
+
+        @media (min-width: 768px) {
+            .project:nth-child(2) {
+                margin-top: 20%;
+            }
+
+            .project:nth-child(3) {
+                margin-top: -20%;
+            }
+        }
+
+        .project__image {
+            display: flex;
+            align-items: flex-start;
+            margin: 0 0 16px;
+            overflow: hidden;
+            border-radius: 20px;
+            transition: border-radius 0.5s cubic-bezier(0.56, 0.42, 0.28, 0.95);
+            height: 300px;
+            box-shadow: 0px 0px 10px 3px #6689e2;
+        }
+
+        .project__image img {
+            aspect-ratio: 1;
+            width: 100%;
+            height: auto;
+            border-radius: inherit;
+            object-fit: cover;
+            /* opacity: 0; */
+            transition: transform 0.8s cubic-bezier(0.56, 0.42, 0.28, 0.95);
+        }
+
+        .project__title,
+        .project__description {
+            width: fit-content;
+            overflow: hidden;
+        }
+
+        .project__title p {
+            color: #fff;
+            font-size: 28px;
+            font-weight: 500;
+            margin: 0 0 8px;
+            transition: transform 0.3s cubic-bezier(0.56, 0.42, 0.28, 0.95) 0.2s;
+        }
+
+        .project__description p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0;
+            transition: transform 0.4s cubic-bezier(0.56, 0.42, 0.28, 0.95);
+        }
+
+        .project.project--hovered .project__title p,
+        .project.project--hovered .project__description p,
+        .project.project--hovered .project-btn a {
+            /* transform: translateY(150%); */
+        }
+
+        .projects.projects--hovered .project:not(.project--hovered) {
+            transform: scale(0.87);
+            opacity: 0.4;
+        }
+
+        .project.project--hovered .project__image {
+            /* height: 400px; */
+            /* position: absolute; */
+            max-width: 1000px;
+            z-index: 10;
+            /* margin-right: 50px; */
+        }
+
+
+        .project.project--hovered .project__image img {
+            /* width: 1000px; */
+            /* transform: scale(1.12); */
+        }
+
+        .right:hover {}
+    </style>
+
+    <style>
+        .Skills_section {
+            width: 100%;
+            background-color: #0e0e1a;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            padding-bottom: 40px;
+        }
+
+        .Skills_section h1 {
+            color: white;
+    margin: 30px auto;
+    width: 80%;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 400px;
+            min-height: 400px;
+            gap: 20px;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+        }
+
+        .each {
+            /* background: #f1f3f6;
+            box-shadow: inset 0 0 5px rgba(55, 84, 170, 0),
+                inset 0 0 10px rgba(255, 255, 255, 0), 5px 5px 9px rgba(55, 84, 170, 0.15),
+                -5px -5px 11px white, inset 0px 0px 2px rgba(255, 255, 255, 0.2);
+            transition: box-shadow 0.2s ease-in-out;
+            height: 190px;
+            width: 190px;
+            border-radius: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 5px solid #eaeef5; */
+
+            background: #01000e;
+            box-shadow: inset 0 0 5px rgba(55, 84, 170, 0), inset 0 0 10px rgb(1 0 14), 5px 5px 9px rgb(1 0 14), -5px -5px 11px #01000e, inset 0px 0px 2px rgb(1 0 14);
+            transition: box-shadow 0.2s ease-in-out;
+            height: 210px;
+            width: 240px;
+            border-radius: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 5px solid #000005;
+            color: #ffffffc9;
+        }
+
+        .skills:hover .each {
+            box-shadow: inset 4px 4px 7px rgba(55, 84, 170, 0.15),
+                inset -4px -4px 10px white, 0px 0px 2px rgba(255, 255, 255, 0.2);
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        .each .box {
+            padding: 16px;
+        }
+
+        .css .box {
+            text-align: right;
+        }
+
+        .js .box {
+            margin-top: 40px;
+        }
+
+        .ng .box {
+            margin-top: 40px;
+            text-align: right;
+        }
+
+        .each .box .content h2 {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+
+        .each .box .content p {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .html .box .content i {
+            margin-top: 40px;
+        }
+
+        .css .box .content i {
+            font-size: 30px;
+            /* margin-left: 100px; */
+            display: inline-block;
+            margin-top: 40px;
+            margin-left: 5px;
+        }
+
+        .js .box .content i {
+            margin-bottom: 20px;
+        }
+
+        .ng .box .content i {
+            margin-bottom: 20px;
+        }
+
+        .each .box .content i {
+            font-size: 30px;
+        }
+
+        .center {
+            position: absolute;
+            height: 160px;
+            width: 160px;
+            background: #ffffffc9;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border-radius: 108px;
+            box-shadow: inset 0 0 5px rgba(55, 84, 170, 0),
+                inset 0 0 10px rgba(255, 255, 255, 0), 5px 5px 9px rgba(55, 84, 170, 0.15),
+                -5px -5px 11px #ffffffc9, inset 0px 0px 2px rgba(255, 255, 255, 0.2);
+            transition: box-shadow 0.2s ease-in-out;
+            border: 10px solid #c9c9cc;
+        }
+
+        .center .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .fa-solid {
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            line-height: 1;
+            text-rendering: auto;
+        }
+    </style>
+
+<!-- responsive CSS  -->
+<style>
+   @media only screen and (max-width: 650px) {
+  .skills {
+   display: flex;
+   flex-direction: column;
+   width: 90%;
+  }
+  .center{
+    display: none;
+  }
+  .each{
+    width: 80%;
+    margin: 10px 0px;
+  }
+  .project{
+    margin: 50px auto;
+  }
+  div.item{
+    width: 90%;
+  }
+  /* .each:nth-child(odd){ */
+    /* align-self: flex-start;
+  }
+
+  .each:nth-child(even){
+    align-self: flex-end;
+
+  }
+  .each:nth-child(4){
+    align-self: flex-start;
+  } */
+}
+</style>
 </head>
 
 <body>
@@ -21,11 +504,12 @@
                 <h1>/* UMiii......! */</h1>
             </div>
             <div class="links">
-                <a href="/">Home</a>
-                <a href="#AboutUS_Section">About</a>
-                <a href="./Services.html">Service</a>
-                <a href="./Contact.html">Contact</a>
-                <a href="./Projects.html">Projects</a>
+                <a href="/" style="--i:1;">Home</a>
+                <a href="#AboutUS_Section" style="--i:2;">About</a>
+                <a href="#certificate" style="--i:3;">Achievements</a>
+                <a href="#skills" style="--i:5;">Skills</a>
+                <a href="#projects" style="--i:5;">Projects</a>
+                <a href="./Contact.html" style="--i:4;">Contact</a>
             </div>
             <div class="hamburgur">
                 <div class="line"></div>
@@ -33,55 +517,320 @@
                 <div class="line"></div>
             </div>
         </nav>
-        
+
     </header>
 
 
     <main id="main">
         <div class="container">
             <div class="left">
-                <strong id="name_heading">
+                <h2 id="name_heading" style="--i:6;">
                     Hello, It's me
-                </strong>
+                </h2>
                 <h1 class="heading">Muhammad Umair</h1>
-                <h2 class="subheading">And I am a <b class="Half_heading_part">Frontend Developer</b></h2>
-                <p class="para">Hello! I'm Muhammad Umair, a passionate and creative frontend developer with a keen eye for design and a love for crafting engaging, user-friendly web experiences. With a solid foundation in HTML, CSS, and JavaScript, </p>
+                <h2 class="subheading" style="--i:8;">And I am a <b class="Half_heading_part">Frontend Developer</b>
+                </h2>
+                <p class="para">Hello! I'm Muhammad Umair, a passionate and creative frontend developer with a keen eye
+                    for design and a love for crafting engaging, user-friendly web experiences. With a solid foundation
+                    in HTML, CSS, and JavaScript, </p>
                 <div class="social_media_links">
 
-                    <a href="https://www.linkedin.com/in/muhammad-umair-649a43297/"><img src="./Images/Linkedin.png" alt="" srcset=""> </a>
-                    <a href=""><img src="./Images/facebook (1).png" alt="" srcset=""> </a>
-                    <a href="https://github.com/umiii-786"><img src="./Images/github.png" alt="" srcset=""> </a>
-                    <a href=""><img src="./Images/instagram.png" alt="" srcset=""> </a>
+                    <a class="linkedin" href="https://www.linkedin.com/in/muhammad-umair-649a43297/"><img
+                            src="./Images/Linkedin.png" alt="" srcset=""> </a>
+
+                    <a href="https://www.facebook.com/umair.jatt.9210256" class="linkedin"><img src="./Images/facebook (1).png" alt="" srcset="" c> </a>
+
+                    <a href="https://github.com/umiii-786" class="linkedin"><img src="./Images/github.png" alt=""
+                            srcset=""> </a>
+
+                    <a href="https://www.instagram.com/umiiijatt_3355/" class="linkedin"><img src="./Images/instagram.png" alt="" srcset=""> </a>
                 </div>
-                <button class="btn">Download CV</button>
+                <a class="btn" download href="./Images/updated Resume.pdf">Download CV</a>
             </div>
             <div class="right">
-                <img src="./Images/pentagonalBorderCyan-removebg-preview.png" id="shape">
+                <img src="./Images/5949703.jpg" id="shape1">
+                <!-- <img src="./Images/pentagonalBorderCyan-removebg-preview.png"class="shape" id="shape1"> -->
                 <img src="./Images/itself1.png" alt="" id="itself2">
             </div>
-            
-
         </div>
     </main>
 
     <section id="AboutUS_Section">
         <div class="container">
             <div class="right">
-                <img src="./Images/pentagonalcyan-removebg-preview.png" id="shape">
-                <img src="./Images/itself1.png" alt="" id="itself">
+                <!-- <img src="./Images/pentagonalcyan-removebg-preview.png" > -->
+                <img src="./Images/fr.jpg" alt="" class="shape">
+                <img src="./Images/itself1.png" id="itself">
             </div>
             <div class="left">
                 <h1 class="heading">About <strong class="Half_heading_part">Me!</strong></h1>
                 <h3 class="subheading">Frontend Developer</h3>
-                <p class="para">My journey into web development began two (2) years ago when I created my first website and fell in love with the process of turning ideas into reality on the web. Since then, I have worked on a range of projects, from small personal websites to large-scale applications, each presenting unique challenges and learning opportunities.</p>
+                <p class="para">My journey into web development began two (2) years ago when I created my first website
+                    and fell in love with the process of turning ideas into reality on the web. Since then, I have
+                    worked on a range of projects, from small personal websites to large-scale applications, each
+                    presenting unique challenges and learning opportunities.</p>
                 <button class="btn">Read More....!</button>
             </div>
         </div>
     </section>
-    
 
+    <hr>
+    <section class="certificate_section" id="certificate">
+        <h1 class="heading certificate_Heading">My <strong class="Half_heading_part">Certifications!</strong></h1>
+        <div class="certification">
+
+
+            <input type="radio" name="position" checked />
+            <input type="radio" name="position" />
+            <input type="radio" name="position" />
+            <input type="radio" name="position" />
+            <input type="radio" name="position" />
+            <main id="carousel">
+                <div class="item">
+                    <img src="./Images/certifications/python.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./Images/certifications/AI Essential.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./Images/certifications/EDA certificate.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./Images/certifications/HighTechCertificates.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./Images/certifications/award .jpg" alt="">
+                </div>
+                <main>
+
+        </div>
+    </section>
+
+    <!-- <hr> -->
+    <section class="Skills_section" id="skills">
+        <h1 class="heading skillheading">Expertise in Various <strong class="Half_heading_part">Skill's!</strong>
+        </h1>
+        <div class="skills">
+            <div class="each html">
+                <div class="box">
+                    <div class="content">
+                        <h2>Frontend Development</h2>
+                        <p>Having Skilled In.</p>
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-css3"></i>
+                        <i class="fa-brands fa-react"></i>
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="each css">
+                <div class="box">
+                    <div class="content">
+                        <h2>Backend Developement</h2>
+                        <p>Having Skilled In.
+                            Nodejs, MySql , Mongodb (basics)
+                        </p>
+                        <i class="fa-brands fa-node"></i>
+                        <i class="fa-solid fa-database"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <div class="box">
+                    <h2>SKILLS</h2>
+                </div>
+            </div>
+            <div class="each js">
+                <div class="box">
+                    <div class="content">
+                        <i class="fa-brands fa-steam"></i>
+                        <i class="fa-brands fa-python"></i>
+                        <h2>Machine Learning</h2>
+                        <p>Having Experience in (supervised Algo, Feature Engineering, Data Preprocessing, Model
+                            Building) </p>
+                    </div>
+                </div>
+            </div>
+            <div class="each ng">
+                <div class="box">
+                    <div class="content">
+                        <i class="fa-brands fa-dashcube"></i>
+                        <h2>Data Driven Dashboards</h2>
+                        <p>Build the Beautiful and insight ful Dashboard</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <hr>
+    <section class="project_section" id="projects">
+        <h1 class="heading">My <strong class="Half_heading_part">Certifications!</strong></h1>
+        <div class="projects">
+
+            <div class="project">
+                <figure class="project__image">
+                    <img src="./Images/dashboardpic.png" alt="Placeholder alt text" />
+                </figure>
+                <div class="project__details">
+                    <div class="project__title">
+                        <p>Dynamic Dashboard Design</p>
+                    </div>
+                    <div class="project__description">
+                        <p>
+                           Created the dynamic, insightful dashboard that is performed on Ecommerce Store data, 
+                        platform used in this Project is Excel</p>
+
+                    </div>
+                    <div class="project-btn">
+<!-- 
+                        <a href="#" class="github">
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15 0C6.7125 0 0 6.7125 0 15C0 21.6375 4.29375 27.2438 10.2562 29.2313C11.0062 29.3625 11.2875 28.9125 11.2875 28.5188C11.2875 28.1625 11.2688 26.9813 11.2688 25.725C7.5 26.4188 6.525 24.8062 6.225 23.9625C6.05625 23.5312 5.325 22.2 4.6875 21.8437C4.1625 21.5625 3.4125 20.8687 4.66875 20.85C5.85 20.8312 6.69375 21.9375 6.975 22.3875C8.325 24.6562 10.4813 24.0188 11.3438 23.625C11.475 22.65 11.8687 21.9937 12.3 21.6187C8.9625 21.2437 5.475 19.95 5.475 14.2125C5.475 12.5812 6.05625 11.2312 7.0125 10.1812C6.8625 9.80625 6.3375 8.26875 7.1625 6.20625C7.1625 6.20625 8.41875 5.8125 11.2875 7.74375C12.4875 7.40625 13.7625 7.2375 15.0375 7.2375C16.3125 7.2375 17.5875 7.40625 18.7875 7.74375C21.6563 5.79375 22.9125 6.20625 22.9125 6.20625C23.7375 8.26875 23.2125 9.80625 23.0625 10.1812C24.0188 11.2312 24.6 12.5625 24.6 14.2125C24.6 19.9687 21.0938 21.2437 17.7563 21.6187C18.3 22.0875 18.7688 22.9875 18.7688 24.3938C18.7688 26.4 18.75 28.0125 18.75 28.5188C18.75 28.9125 19.0313 29.3813 19.7813 29.2313C22.7592 28.2262 25.3469 26.3125 27.18 23.7595C29.0132 21.2066 29.9995 18.1429 30 15C30 6.7125 23.2875 0 15 0Z"
+                                    fill="#F5F5F5" />
+                            </svg>
+                        </a> -->
+                        <a href="#" class="site">
+                            Visit <img src="./Images/redirecticon1.png" alt="" srcset=""  width="30" height="30" >
+                                                   </a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="project">
+                <figure class="project__image">
+                    <img src="./Images/happinessproject.jpg" alt="Placeholder alt text" />
+                </figure>
+                <div class="project__details">
+                    <div class="project__title">
+                        <p>Country Happiness Prediction</p>
+                    </div>
+
+                           <div class="project__description">
+                        <p>
+                           Create a project On Machine Learning and Data Analysis, In which i performed Data Analysis on Five Year Coutries Dataset and build a model to predict Country Happiness Score.  </p>
+
+                    </div>
+
+                    <div class="project-btn">
+                        <a href="https://countrieshappinesspredict-bundoezvexvyh4wbaz2ekm.streamlit.app/" class="site">
+                            Visit <img src="./Images/redirecticon1.png" alt="" srcset=""  width="30" height="30" >
+                        </a>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+                 
+            <div class="project">
+                <figure class="project__image">
+                    <img src="./Images/project4.png" alt="Placeholder alt text" />
+                </figure>
+                <div class="project__details">
+                    <div class="project__title">
+                        <p>Dynamic Food Orderring website</p>
+                    </div>
+                    <div class="project__description">
+                        <p>
+                           Created the dynamic, food orderring website contains all the Add or remove to Card Option, the technology is used in HTML, CSS, REACT-JS</p>
+
+                    </div>
+                    <div class="project-btn">
+
+                        <!-- <a href="" class="github">
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15 0C6.7125 0 0 6.7125 0 15C0 21.6375 4.29375 27.2438 10.2562 29.2313C11.0062 29.3625 11.2875 28.9125 11.2875 28.5188C11.2875 28.1625 11.2688 26.9813 11.2688 25.725C7.5 26.4188 6.525 24.8062 6.225 23.9625C6.05625 23.5312 5.325 22.2 4.6875 21.8437C4.1625 21.5625 3.4125 20.8687 4.66875 20.85C5.85 20.8312 6.69375 21.9375 6.975 22.3875C8.325 24.6562 10.4813 24.0188 11.3438 23.625C11.475 22.65 11.8687 21.9937 12.3 21.6187C8.9625 21.2437 5.475 19.95 5.475 14.2125C5.475 12.5812 6.05625 11.2312 7.0125 10.1812C6.8625 9.80625 6.3375 8.26875 7.1625 6.20625C7.1625 6.20625 8.41875 5.8125 11.2875 7.74375C12.4875 7.40625 13.7625 7.2375 15.0375 7.2375C16.3125 7.2375 17.5875 7.40625 18.7875 7.74375C21.6563 5.79375 22.9125 6.20625 22.9125 6.20625C23.7375 8.26875 23.2125 9.80625 23.0625 10.1812C24.0188 11.2312 24.6 12.5625 24.6 14.2125C24.6 19.9687 21.0938 21.2437 17.7563 21.6187C18.3 22.0875 18.7688 22.9875 18.7688 24.3938C18.7688 26.4 18.75 28.0125 18.75 28.5188C18.75 28.9125 19.0313 29.3813 19.7813 29.2313C22.7592 28.2262 25.3469 26.3125 27.18 23.7595C29.0132 21.2066 29.9995 18.1429 30 15C30 6.7125 23.2875 0 15 0Z"
+                                    fill="#F5F5F5" />
+                            </svg>
+                        </a> -->
+                        <a href="https://umiii-786.github.io/Restaurent-website-using-Core-Coding-/" class="site">
+                            Visit <img src="./Images/redirecticon1.png" alt="" srcset=""  width="30" height="30" >
+                            <!-- <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.92497 18.1374C9.14997 17.8499 8.46247 17.2874 8.02497 16.4874C7.02497 14.6624 7.63747 12.2874 9.41247 11.1874L12.3375 9.37485C14.1 8.27485 16.375 8.87483 17.375 10.6873C18.375 12.5124 17.7625 14.8874 15.9875 15.9874L15.6 16.2624"
+                                    stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M20.1375 11.8124C20.9125 12.0999 21.6 12.6624 22.0375 13.4624C23.0375 15.2874 22.425 17.6624 20.65 18.7624L17.7249 20.5749C15.9624 21.6749 13.6874 21.0749 12.6874 19.2624C11.6874 17.4374 12.2999 15.0625 14.0749 13.9625L14.4625 13.6875"
+                                    stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M15 27.5C21.9035 27.5 27.5 21.9035 27.5 15C27.5 8.09644 21.9035 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 21.9035 8.09644 27.5 15 27.5Z"
+                                    stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg> -->
+
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+            
+            <div class="project">
+                <figure class="project__image">
+                    <img src="./Images/project3.jpg" alt="Placeholder alt text" />
+                </figure>
+                <div class="project__details">
+                    <div class="project__title">
+                        <p>Dynamic Food Orderring website</p>
+                    </div>
+                    <div class="project__description">
+                        <p>
+                           Created the dynamic, food orderring website contains all the Add or remove to Card Option, the technology is used in HTML, CSS, REACT-JS</p>
+
+                    </div>
+                    <div class="project-btn">
+
+                        <!-- <a href="#" class="github">
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15 0C6.7125 0 0 6.7125 0 15C0 21.6375 4.29375 27.2438 10.2562 29.2313C11.0062 29.3625 11.2875 28.9125 11.2875 28.5188C11.2875 28.1625 11.2688 26.9813 11.2688 25.725C7.5 26.4188 6.525 24.8062 6.225 23.9625C6.05625 23.5312 5.325 22.2 4.6875 21.8437C4.1625 21.5625 3.4125 20.8687 4.66875 20.85C5.85 20.8312 6.69375 21.9375 6.975 22.3875C8.325 24.6562 10.4813 24.0188 11.3438 23.625C11.475 22.65 11.8687 21.9937 12.3 21.6187C8.9625 21.2437 5.475 19.95 5.475 14.2125C5.475 12.5812 6.05625 11.2312 7.0125 10.1812C6.8625 9.80625 6.3375 8.26875 7.1625 6.20625C7.1625 6.20625 8.41875 5.8125 11.2875 7.74375C12.4875 7.40625 13.7625 7.2375 15.0375 7.2375C16.3125 7.2375 17.5875 7.40625 18.7875 7.74375C21.6563 5.79375 22.9125 6.20625 22.9125 6.20625C23.7375 8.26875 23.2125 9.80625 23.0625 10.1812C24.0188 11.2312 24.6 12.5625 24.6 14.2125C24.6 19.9687 21.0938 21.2437 17.7563 21.6187C18.3 22.0875 18.7688 22.9875 18.7688 24.3938C18.7688 26.4 18.75 28.0125 18.75 28.5188C18.75 28.9125 19.0313 29.3813 19.7813 29.2313C22.7592 28.2262 25.3469 26.3125 27.18 23.7595C29.0132 21.2066 29.9995 18.1429 30 15C30 6.7125 23.2875 0 15 0Z"
+                                    fill="#F5F5F5" />
+                            </svg>
+                        </a> -->
+                        <a href="https://umiii-786.github.io/Foods/" class="site">
+                            Visit <img src="./Images/redirecticon1.png" alt="" srcset=""  width="30" height="30" >
+                            <!-- <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.92497 18.1374C9.14997 17.8499 8.46247 17.2874 8.02497 16.4874C7.02497 14.6624 7.63747 12.2874 9.41247 11.1874L12.3375 9.37485C14.1 8.27485 16.375 8.87483 17.375 10.6873C18.375 12.5124 17.7625 14.8874 15.9875 15.9874L15.6 16.2624"
+                                    stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M20.1375 11.8124C20.9125 12.0999 21.6 12.6624 22.0375 13.4624C23.0375 15.2874 22.425 17.6624 20.65 18.7624L17.7249 20.5749C15.9624 21.6749 13.6874 21.0749 12.6874 19.2624C11.6874 17.4374 12.2999 15.0625 14.0749 13.9625L14.4625 13.6875"
+                                    stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M15 27.5C21.9035 27.5 27.5 21.9035 27.5 15C27.5 8.09644 21.9035 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 21.9035 8.09644 27.5 15 27.5Z"
+                                    stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg> -->
+
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
 
 </body>
 <script src="./Navbar.js"></script>
+<script src="./projectEffect.js"></script>
 
 </html>

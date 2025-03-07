@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="./CSS/Navbar.css">
    <link rel="stylesheet" href="./CSS/Contact.css">
    <link rel="stylesheet" href="./CSS/ResponsiveNavbar.css">
+   <style>
+    #error{
+        color: red;
+        margin: 10px 0px;
+        font-size: 16px;
+    }
+   </style>
 </head>
 
 <body>
@@ -17,11 +24,12 @@
                 <h1>/* UMiii......! */</h1>
             </div>
             <div class="links">
-                <a href="/">Home</a>
-                <a href="/">About</a>
-                <a href="./Services.html">Service</a>
-                <a href="./Contact.html">Contact</a>
-                <a href="./Projects.html">Projects</a>
+                <a href="/" style="--i:1;">Home</a>
+                <a href="/#AboutUS_Section" style="--i:2;">About</a>
+                <a href="/#certificate" style="--i:3;">Achievements</a>
+                <a href="/#skills" style="--i:5;">Skills</a>
+                <a href="/#projects" style="--i:5;">Projects</a>
+                <a href="./Contact.html" style="--i:4;">Contact</a>
             </div>
             <div class="hamburgur">
                 <div class="line"></div>
@@ -35,7 +43,7 @@
         <div class="container">
             <h1 class="heading">Contact <b class="Half_heading_part">Information</b></h1>
             <div class="contactdiv">
-                <div class="box">
+                <div class="box"  style="--i:1;">
                     <div class="eachline">
                         <h4 class="title">Country:</h4>
                         <h4 class="answer">Pakistan</h4>
@@ -50,7 +58,7 @@
                     </div>
                 </div>
 
-                <div class="box">
+                <div class="box" style="--i:2;">
 
                     <div class="eachline">
                         <h4 class="title">Watsapp:</h4>
@@ -67,7 +75,7 @@
 
                 </div>
 
-                <div class="box">
+                <div class="box" style="--i:3;">
 
 
                     <div class="eachline">
@@ -93,13 +101,14 @@
 
             <div>
                 <h1 class="heading">Get In <b class="Half_heading_part">Touch</b></h1>
-                <form action="" class="form">
-                    <input type="text" class="input" placeholder="Name">
-                    <input type="email" class="input" placeholder="Email">
+                <form action="https://formspree.io/f/mzzzywee" method="post" class="form">
+                    <input type="text" class="input" name="name" placeholder="Enter Your Name">
+                    <input type="email" class="input" name="email" placeholder="Enter Your Email">
                     <textarea name="purpose" class="input" rows="10" placeholder="Enter Email Purpose"></textarea>
                     <div class="button">
-                        <Button class="btn">Done...!</Button>
+                        <Button class="btn" type="button" id="submitbutton">Done...!</Button>
                     </div>
+                    <error id="error"></error>
                 </form>
             </div>
         </div>
@@ -109,6 +118,24 @@
 
    
     <script src="./Navbar.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        let inputs=document.querySelectorAll('.input')
+        document.getElementById('submitbutton').addEventListener('click',submitForm)
+        function submitForm(){
+            let check_empty=false;
+            inputs.forEach((input)=>{
+                if(input.value.trim()==""){
+                    console.log('ander hn ')
+                    check_empty=true
+                }
+                console.log(input.value)
+
+            })
+            if(check_empty) document.getElementById('error').innerHTML="Plzz fill All the requirement"
+            else document.querySelector('.form').submit()
+        }
+    </script>
 </body>
 
 </html>

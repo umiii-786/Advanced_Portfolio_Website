@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 400px;
+  gap: 20px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+
+.each {
+  background: #f1f3f6;
+  box-shadow: inset 0 0 5px rgba(55, 84, 170, 0),
+    inset 0 0 10px rgba(255, 255, 255, 0), 5px 5px 9px rgba(55, 84, 170, 0.15),
+    -5px -5px 11px white, inset 0px 0px 2px rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.2s ease-in-out;
+  height: 190px;
+  width: 190px;
+  border-radius: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 5px solid #eaeef5;
+}
+
+.skills:hover .each {
+  box-shadow: inset 4px 4px 7px rgba(55, 84, 170, 0.15),
+    inset -4px -4px 10px white, 0px 0px 2px rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.each .box {
+  padding: 16px;
+}
+
+.css .box {
+  text-align: right;
+}
+
+.js .box {
+  margin-top: 40px;
+}
+
+.ng .box {
+  margin-top: 40px;
+  text-align: right;
+}
+
+.each .box .content h2 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.each .box .content p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.html .box .content i {
+  margin-top: 40px;
+}
+
+.css .box .content i {
+  font-size: 30px;
+  margin-left: 100px;
+  margin-top: 40px;
+}
+
+.js .box .content i {
+  margin-bottom: 20px;
+}
+
+.ng .box .content i {
+  margin-bottom: 20px;
+}
+
+.each .box .content i {
+  font-size: 30px;
+}
+
+.center {
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  background: #f1f3f6;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border-radius: 108px;
+  box-shadow: inset 0 0 5px rgba(55, 84, 170, 0),
+    inset 0 0 10px rgba(255, 255, 255, 0), 5px 5px 9px rgba(55, 84, 170, 0.15),
+    -5px -5px 11px white, inset 0px 0px 2px rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.2s ease-in-out;
+  border: 10px solid #e8edf5;
+}
+
+.center .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+  </style>
+</head>
+<body>
+  <meta name="author" content="Joydip Paul">
+<meta name="description" content="Code snippets and creative web designs by Joydip Paul.">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="skills">
+  <div class="each html">
+    <div class="box">
+      <div class="content">
+        <h2>HTML</h2>
+        <p>Lorem, ipsum dolor elit. Sapiente, nemo.</p>
+        <i class="fa-brands fa-html5"></i>
+      </div>
+    </div>
+  </div>
+  <div class="each css">
+    <div class="box">
+      <div class="content">
+        <h2>CSS</h2>
+        <p>Lorem, ipsum dolor elit. Sapiente, nemo.</p>
+        <i class="fa-brands fa-css3"></i>
+      </div>
+    </div>
+  </div>
+  <div class="center">
+    <div class="box">
+      <h2>SKILLS</h2>
+    </div>
+  </div>
+  <div class="each js">
+    <div class="box">
+      <div class="content">
+        <i class="fa-brands fa-js"></i>
+        <h2>JAVASCRIPT</h2>
+        <p>Lorem, ipsum dolor elit. Sapiente, nemo.</p>
+      </div>
+    </div>
+  </div>
+  <div class="each ng">
+    <div class="box">
+      <div class="content">
+        <i class="fa-brands fa-angular"></i>
+        <h2>ANGULAR</h2>
+        <p>Lorem, ipsum dolor elit. Sapiente, nemo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+    body {
+      font-family: "Lato", sans-serif;
+      background: #181818;
+      padding: 50px 0;
+      cursor: crosshair;
+    }
+
+    /* .cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.cursor__circle {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+}
+.cursor__circle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--width);
+  height: 28px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibiluty 0.3s ease;
+}
+
+.cursor__circle.cursor__circle--active::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cursor__text {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  opacity: 0;
+  visibility: hidden;
+  width: var(--width);
+  overflow: hidden;
+}
+
+.cursor__text p {
+  font-weight: 700;
+  text-transform: uppercase;
+  will-change: transform;
+  margin: 0;
+} */
+
+    /* .cursor__circle.cursor__circle--active .cursor__text {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.15s;
+}
+
+.cursor__circle.cursor__circle--active .cursor__text p {
+  animation: animateProjectName 1.5s linear infinite;
+}
+
+@keyframes animateProjectName {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+} */
+
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      row-gap: 50px;
+      margin: 0 16px;
+      place-self: start;
+    }
+
+    @media (min-width: 768px) {
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 16px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .projects {
+        column-gap: 48px;
+        row-gap: 100px;
+        margin: 0 48px;
+      }
+    }
+
+    @media (min-width: 1440px) {
+      .projects {
+        column-gap: 200px;
+        margin: 0 100px;
+      }
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      cursor: none;
+      transition: transform 0.35s cubic-bezier(0.56, 0.42, 0.28, 0.95), opacity 0.15s ease;
+    }
+
+    @media (min-width: 768px) {
+      .project:nth-child(2) {
+        margin-top: 20%;
+      }
+
+      .project:nth-child(3) {
+        margin-top: -20%;
+      }
+    }
+
+    .project__image {
+      display: flex;
+      align-items: flex-start;
+      margin: 0 0 16px;
+      overflow: hidden;
+      background: #202020;
+      border-radius: 20px;
+      transition: border-radius 0.5s cubic-bezier(0.56, 0.42, 0.28, 0.95);
+      height: 300px;
+    }
+
+    .project__image img {
+      aspect-ratio: 1;
+      width: 100%;
+      height: auto;
+      border-radius: inherit;
+      object-fit: cover;
+      opacity: 0;
+      transition: transform 0.8s cubic-bezier(0.56, 0.42, 0.28, 0.95);
+    }
+
+    .project__title,
+    .project__description {
+      width: fit-content;
+      overflow: hidden;
+    }
+
+    .project__title p {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 500;
+      margin: 0 0 8px;
+      transition: transform 0.3s cubic-bezier(0.56, 0.42, 0.28, 0.95) 0.2s;
+    }
+
+    .project__description p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0;
+      transition: transform 0.4s cubic-bezier(0.56, 0.42, 0.28, 0.95);
+    }
+
+    .project.project--hovered .project__title p,
+    .project.project--hovered .project__description p {
+      transform: translateY(150%);
+    }
+
+    .projects.projects--hovered .project:not(.project--hovered) {
+      transform: scale(0.87);
+      opacity: 0.4;
+    }
+
+    .project.project--hovered .project__image {
+      height: 400px;
+      border-radius: 50%;
+    }
+
+    .project.project--hovered .project__image img {
+      transform: scale(1.12);
+    }
+
+    .project-btn {
+      display: flex;
+      gap: 1rem;
+      margin: 20px 0px;
+    }
+
+    .project-btn a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .5rem;
+      border-radius: .5rem;
+    }
+
+    .project-btn a svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .github {
+      background: #333333;
+    }
+
+    .site {
+      background: linear-gradient(90deg, #602DFF 0%, #170055 100%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="projects">
+  
+    <div class="project">
+      <figure class="project__image">
+        <img
+          src="https://images.unsplash.com/photo-1677926405168-fa86268b7295?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Nzg2MjkwNTk&ixlib=rb-4.0.3&q=20"
+          alt="Placeholder alt text" />
+      </figure>
+      <div class="project__details">
+        <div class="project__title">
+          <p>Creative Title</p>
+        </div>
+        <div class="project__description">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget laoreet nibh. Nunc sollicitudin consequat
+            facilisis.</p>
+
+          </div>
+          <div class="project-btn">
+          
+            <a href="#" class="github">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15 0C6.7125 0 0 6.7125 0 15C0 21.6375 4.29375 27.2438 10.2562 29.2313C11.0062 29.3625 11.2875 28.9125 11.2875 28.5188C11.2875 28.1625 11.2688 26.9813 11.2688 25.725C7.5 26.4188 6.525 24.8062 6.225 23.9625C6.05625 23.5312 5.325 22.2 4.6875 21.8437C4.1625 21.5625 3.4125 20.8687 4.66875 20.85C5.85 20.8312 6.69375 21.9375 6.975 22.3875C8.325 24.6562 10.4813 24.0188 11.3438 23.625C11.475 22.65 11.8687 21.9937 12.3 21.6187C8.9625 21.2437 5.475 19.95 5.475 14.2125C5.475 12.5812 6.05625 11.2312 7.0125 10.1812C6.8625 9.80625 6.3375 8.26875 7.1625 6.20625C7.1625 6.20625 8.41875 5.8125 11.2875 7.74375C12.4875 7.40625 13.7625 7.2375 15.0375 7.2375C16.3125 7.2375 17.5875 7.40625 18.7875 7.74375C21.6563 5.79375 22.9125 6.20625 22.9125 6.20625C23.7375 8.26875 23.2125 9.80625 23.0625 10.1812C24.0188 11.2312 24.6 12.5625 24.6 14.2125C24.6 19.9687 21.0938 21.2437 17.7563 21.6187C18.3 22.0875 18.7688 22.9875 18.7688 24.3938C18.7688 26.4 18.75 28.0125 18.75 28.5188C18.75 28.9125 19.0313 29.3813 19.7813 29.2313C22.7592 28.2262 25.3469 26.3125 27.18 23.7595C29.0132 21.2066 29.9995 18.1429 30 15C30 6.7125 23.2875 0 15 0Z"
+                  fill="#F5F5F5" />
+              </svg>
+            </a>
+            <a href="#" class="site">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9.92497 18.1374C9.14997 17.8499 8.46247 17.2874 8.02497 16.4874C7.02497 14.6624 7.63747 12.2874 9.41247 11.1874L12.3375 9.37485C14.1 8.27485 16.375 8.87483 17.375 10.6873C18.375 12.5124 17.7625 14.8874 15.9875 15.9874L15.6 16.2624"
+                  stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M20.1375 11.8124C20.9125 12.0999 21.6 12.6624 22.0375 13.4624C23.0375 15.2874 22.425 17.6624 20.65 18.7624L17.7249 20.5749C15.9624 21.6749 13.6874 21.0749 12.6874 19.2624C11.6874 17.4374 12.2999 15.0625 14.0749 13.9625L14.4625 13.6875"
+                  stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M15 27.5C21.9035 27.5 27.5 21.9035 27.5 15C27.5 8.09644 21.9035 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 21.9035 8.09644 27.5 15 27.5Z"
+                  stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+    
+            </a>
+          </div>
+      </div>
+    
+
+    </div>
+  </section>
+
+  <script>
+    console.clear();
+
+    const projectShowcase = document.querySelector(".projects");
+    const projects = projectShowcase.querySelectorAll(".project");
+    const images = projectShowcase.querySelectorAll("img");
+
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      projects.forEach((currentProject) => {
+        const title = currentProject.querySelector(".project__title");
+
+        currentProject.addEventListener("mouseover", () => {
+          projectShowcase.classList.add("projects--hovered");
+          projects.forEach((project) => {
+            if (project.classList.contains("project--hovered")) {
+              project.classList.remove("project--hovered");
+            }
+            if (project == currentProject) {
+              currentProject.classList.add("project--hovered");
+            }
+          });
+        });
+
+        currentProject.addEventListener("mouseleave", () => {
+          projectShowcase.classList.remove("projects--hovered");
+          currentProject.classList.remove("project--hovered");
+          cursor.classList.remove("cursor__circle--active");
+          cursorText.innerText = "";
+        });
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url(https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap);
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+* {
+    font-family: Rubik,sans-serif
+}
+
+*,:after,:before {
+    box-sizing: border-box
+}
+
+html {
+    font-size: 16px
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size:15px
+    }
+}
+
+@media screen and (max-width: 465px) {
+    html {
+        font-size:14px
+    }
+}
+
+body{
+  background: #202020;
+}
+
+.main{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  background: radial-gradient(50% 50% at 50% 50%, #170055 0%, rgba(32, 32, 32, 0) 100%);
+}
+
+.main-title{
+  color: #CCCCCC;
+  font-size: 2.5rem;
+  text-align: center;
+  max-width: 900px;
+}
+
+.title-hero{
+  text-decoration: underline;
+  color: #602DFF;
+}
+
+.project{
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #602DFF;
+  border-radius: 1rem;
+  background: #252525;
+  overflow: hidden;
+  margin: 0 -1rem;
+  z-index: 10;
+
+}
+
+.project-header{
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.project-img{
+    border-radius: 1rem;
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.active > span{
+  width: 7px;  
+  height: 7px;
+  display: block;
+  border-radius: 50%;
+  background: rgb(96, 45, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.active > span::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: 50%;
+  z-index: 100;
+  animation: ripple 1.5s ease-out infinite;
+}
+
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+
+.active{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.projects{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.project-btn{
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.project-btn a{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem;
+  border-radius: .5rem;
+}
+
+.project-btn a svg{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.github{
+  background: #333333;
+}
+
+.site{
+  background: linear-gradient(90deg, #602DFF 0%, #170055 100%);
+}
+
+@media screen and (max-width: 900px){
+  .project{
+    display: none;
+  }
+  .project-main{
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .project{
+    width: 90%;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1 class="main-title">
+      LET'S DO <span class="title-hero">PERFECT</span> JOBS TOGETHER
+    </h1>
+    <div class="projects">
+      <div class="project">
+        <div class="project-header">
+          <h3 class="project-title">YKS TARGET</h3>
+          <span class="active">
+            <span><span><span></span></span></span>
+            active
+          </span>
+        </div>
+        <img src="https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njh8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400" alt="" class="project-img">
+
+        <div class="project-btn">
+          <a href="#" class="github">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M15 0C6.7125 0 0 6.7125 0 15C0 21.6375 4.29375 27.2438 10.2562 29.2313C11.0062 29.3625 11.2875 28.9125 11.2875 28.5188C11.2875 28.1625 11.2688 26.9813 11.2688 25.725C7.5 26.4188 6.525 24.8062 6.225 23.9625C6.05625 23.5312 5.325 22.2 4.6875 21.8437C4.1625 21.5625 3.4125 20.8687 4.66875 20.85C5.85 20.8312 6.69375 21.9375 6.975 22.3875C8.325 24.6562 10.4813 24.0188 11.3438 23.625C11.475 22.65 11.8687 21.9937 12.3 21.6187C8.9625 21.2437 5.475 19.95 5.475 14.2125C5.475 12.5812 6.05625 11.2312 7.0125 10.1812C6.8625 9.80625 6.3375 8.26875 7.1625 6.20625C7.1625 6.20625 8.41875 5.8125 11.2875 7.74375C12.4875 7.40625 13.7625 7.2375 15.0375 7.2375C16.3125 7.2375 17.5875 7.40625 18.7875 7.74375C21.6563 5.79375 22.9125 6.20625 22.9125 6.20625C23.7375 8.26875 23.2125 9.80625 23.0625 10.1812C24.0188 11.2312 24.6 12.5625 24.6 14.2125C24.6 19.9687 21.0938 21.2437 17.7563 21.6187C18.3 22.0875 18.7688 22.9875 18.7688 24.3938C18.7688 26.4 18.75 28.0125 18.75 28.5188C18.75 28.9125 19.0313 29.3813 19.7813 29.2313C22.7592 28.2262 25.3469 26.3125 27.18 23.7595C29.0132 21.2066 29.9995 18.1429 30 15C30 6.7125 23.2875 0 15 0Z" fill="#F5F5F5"/>
+  </svg>
+          </a>
+          <a href="#" class="site">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M9.92497 18.1374C9.14997 17.8499 8.46247 17.2874 8.02497 16.4874C7.02497 14.6624 7.63747 12.2874 9.41247 11.1874L12.3375 9.37485C14.1 8.27485 16.375 8.87483 17.375 10.6873C18.375 12.5124 17.7625 14.8874 15.9875 15.9874L15.6 16.2624" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20.1375 11.8124C20.9125 12.0999 21.6 12.6624 22.0375 13.4624C23.0375 15.2874 22.425 17.6624 20.65 18.7624L17.7249 20.5749C15.9624 21.6749 13.6874 21.0749 12.6874 19.2624C11.6874 17.4374 12.2999 15.0625 14.0749 13.9625L14.4625 13.6875" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 27.5C21.9035 27.5 27.5 21.9035 27.5 15C27.5 8.09644 21.9035 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 21.9035 8.09644 27.5 15 27.5Z" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  
+          </a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <h3 class="project-title">YKS TARGET</h3>
+          <span class="active">
+            <span><span><span></span></span></span>
+            active
+          </span>
+        </div>
+        <img src="https://images.unsplash.com/photo-1645680827507-9f392edae51c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" class="project-img">
+        <div class="project-btn">
+          <a href="#" class="github">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M15 0C6.7125 0 0 6.7125 0 15C0 21.6375 4.29375 27.2438 10.2562 29.2313C11.0062 29.3625 11.2875 28.9125 11.2875 28.5188C11.2875 28.1625 11.2688 26.9813 11.2688 25.725C7.5 26.4188 6.525 24.8062 6.225 23.9625C6.05625 23.5312 5.325 22.2 4.6875 21.8437C4.1625 21.5625 3.4125 20.8687 4.66875 20.85C5.85 20.8312 6.69375 21.9375 6.975 22.3875C8.325 24.6562 10.4813 24.0188 11.3438 23.625C11.475 22.65 11.8687 21.9937 12.3 21.6187C8.9625 21.2437 5.475 19.95 5.475 14.2125C5.475 12.5812 6.05625 11.2312 7.0125 10.1812C6.8625 9.80625 6.3375 8.26875 7.1625 6.20625C7.1625 6.20625 8.41875 5.8125 11.2875 7.74375C12.4875 7.40625 13.7625 7.2375 15.0375 7.2375C16.3125 7.2375 17.5875 7.40625 18.7875 7.74375C21.6563 5.79375 22.9125 6.20625 22.9125 6.20625C23.7375 8.26875 23.2125 9.80625 23.0625 10.1812C24.0188 11.2312 24.6 12.5625 24.6 14.2125C24.6 19.9687 21.0938 21.2437 17.7563 21.6187C18.3 22.0875 18.7688 22.9875 18.7688 24.3938C18.7688 26.4 18.75 28.0125 18.75 28.5188C18.75 28.9125 19.0313 29.3813 19.7813 29.2313C22.7592 28.2262 25.3469 26.3125 27.18 23.7595C29.0132 21.2066 29.9995 18.1429 30 15C30 6.7125 23.2875 0 15 0Z" fill="#F5F5F5"/>
+  </svg>
+          </a>
+          <a href="#" class="site">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M9.92497 18.1374C9.14997 17.8499 8.46247 17.2874 8.02497 16.4874C7.02497 14.6624 7.63747 12.2874 9.41247 11.1874L12.3375 9.37485C14.1 8.27485 16.375 8.87483 17.375 10.6873C18.375 12.5124 17.7625 14.8874 15.9875 15.9874L15.6 16.2624" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20.1375 11.8124C20.9125 12.0999 21.6 12.6624 22.0375 13.4624C23.0375 15.2874 22.425 17.6624 20.65 18.7624L17.7249 20.5749C15.9624 21.6749 13.6874 21.0749 12.6874 19.2624C11.6874 17.4374 12.2999 15.0625 14.0749 13.9625L14.4625 13.6875" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 27.5C21.9035 27.5 27.5 21.9035 27.5 15C27.5 8.09644 21.9035 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 21.9035 8.09644 27.5 15 27.5Z" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  
+          </a>
+        </div>
+      </div>
+
+
+      <div class="project">
+        <div class="project-header">
+          <h3 class="project-title">YKS TARGET</h3>
+          <span class="active">
+            <span><span><span></span></span></span>
+            active
+          </span>
+        </div>
+        <img src="https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njh8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400" alt="" class="project-img">
+
+        <div class="project-btn">
+          <a href="#" class="github">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M15 0C6.7125 0 0 6.7125 0 15C0 21.6375 4.29375 27.2438 10.2562 29.2313C11.0062 29.3625 11.2875 28.9125 11.2875 28.5188C11.2875 28.1625 11.2688 26.9813 11.2688 25.725C7.5 26.4188 6.525 24.8062 6.225 23.9625C6.05625 23.5312 5.325 22.2 4.6875 21.8437C4.1625 21.5625 3.4125 20.8687 4.66875 20.85C5.85 20.8312 6.69375 21.9375 6.975 22.3875C8.325 24.6562 10.4813 24.0188 11.3438 23.625C11.475 22.65 11.8687 21.9937 12.3 21.6187C8.9625 21.2437 5.475 19.95 5.475 14.2125C5.475 12.5812 6.05625 11.2312 7.0125 10.1812C6.8625 9.80625 6.3375 8.26875 7.1625 6.20625C7.1625 6.20625 8.41875 5.8125 11.2875 7.74375C12.4875 7.40625 13.7625 7.2375 15.0375 7.2375C16.3125 7.2375 17.5875 7.40625 18.7875 7.74375C21.6563 5.79375 22.9125 6.20625 22.9125 6.20625C23.7375 8.26875 23.2125 9.80625 23.0625 10.1812C24.0188 11.2312 24.6 12.5625 24.6 14.2125C24.6 19.9687 21.0938 21.2437 17.7563 21.6187C18.3 22.0875 18.7688 22.9875 18.7688 24.3938C18.7688 26.4 18.75 28.0125 18.75 28.5188C18.75 28.9125 19.0313 29.3813 19.7813 29.2313C22.7592 28.2262 25.3469 26.3125 27.18 23.7595C29.0132 21.2066 29.9995 18.1429 30 15C30 6.7125 23.2875 0 15 0Z" fill="#F5F5F5"/>
+  </svg>
+          </a>
+          <a href="#" class="site">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M9.92497 18.1374C9.14997 17.8499 8.46247 17.2874 8.02497 16.4874C7.02497 14.6624 7.63747 12.2874 9.41247 11.1874L12.3375 9.37485C14.1 8.27485 16.375 8.87483 17.375 10.6873C18.375 12.5124 17.7625 14.8874 15.9875 15.9874L15.6 16.2624" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20.1375 11.8124C20.9125 12.0999 21.6 12.6624 22.0375 13.4624C23.0375 15.2874 22.425 17.6624 20.65 18.7624L17.7249 20.5749C15.9624 21.6749 13.6874 21.0749 12.6874 19.2624C11.6874 17.4374 12.2999 15.0625 14.0749 13.9625L14.4625 13.6875" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 27.5C21.9035 27.5 27.5 21.9035 27.5 15C27.5 8.09644 21.9035 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 21.9035 8.09644 27.5 15 27.5Z" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  
+
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="vbattalshn" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</body>
+</html> --> -->
